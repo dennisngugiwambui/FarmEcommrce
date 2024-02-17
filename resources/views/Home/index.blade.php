@@ -12,10 +12,10 @@
     <title>Farm Ecommerce</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('Admin/img/core-img/favicon.ico')}}">
+    <link rel="icon" href="{{asset('Home/img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{asset('Admin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('Home/style.css')}}">
 
 </head>
 
@@ -24,7 +24,7 @@
 <div class="preloader d-flex align-items-center justify-content-center">
     <div class="preloader-circle"></div>
     <div class="preloader-img">
-        <img src="{{asset('Admin/img/core-img/leaf.png')}}" alt="">
+        <img src="{{asset('Home/img/core-img/leaf.png')}}" alt="">
     </div>
 </div>
 
@@ -39,8 +39,8 @@
                     <div class="top-header-content d-flex align-items-center justify-content-between">
                         <!-- Top Header Content -->
                         <div class="top-header-meta">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="samwriters23@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: samwriters23@gmail.com</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1254-718322260"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +254-718322260</span></a>
                         </div>
 
                         <!-- Top Header Content -->
@@ -53,7 +53,7 @@
                             </div>
                             <!-- Login -->
                             <div class="login">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
+                                <a href="{{route('login')}}"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
                             </div>
                             <!-- Cart -->
                             <div class="cart">
@@ -74,7 +74,7 @@
                 <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                     <!-- Nav Brand -->
-                    <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="/" class="nav-brand"><img src="{{asset('Home/img/core-img/logo.png')}}" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -92,8 +92,8 @@
                         <!-- Navbar Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about">About</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="index.html">Home</a></li>
@@ -158,17 +158,18 @@
         <!-- Single Hero Post -->
         <div class="single-hero-post bg-overlay">
             <!-- Post Image -->
-            <div class="slide-img bg-img" style="background-image: url(img/bg-img/1.jpg);"></div>
+            <div class="slide-img bg-img" style="background-image: url(Home/img/bg-img/1.jpg);"></div>
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <!-- Post Content -->
                         <div class="hero-slides-content text-center">
-                            <h2>Plants exist in the weather and light rays that surround them</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque ante nec ipsum iaculis, ac iaculis ipsum porttitor. Vivamus cursus nisl lectus, id mattis nisl lobortis eu. Duis diam augue, dapibus ut dolor at, mattis maximus dolor.</p>
+                            <h2>We are the best platform where farmers can freely interact. </h2>
+
+                            <p>Our platform serves as a thriving marketplace connecting agricultural farmers with buyers, facilitating seamless transactions for farm products. Here, farmers can effortlessly showcase their offerings, while interested individuals can browse and purchase directly. Join us today and experience the ease of agricultural trade!</p>
                             <div class="welcome-btn-group">
-                                <a href="#" class="btn alazea-btn mr-30">GET STARTED</a>
-                                <a href="#" class="btn alazea-btn active">CONTACT US</a>
+                                <a href="{{route('login')}}" class="btn alazea-btn mr-30">GET STARTED</a>
+                                <a href="/contact" class="btn alazea-btn active">CONTACT US</a>
                             </div>
                         </div>
                     </div>
@@ -179,17 +180,17 @@
         <!-- Single Hero Post -->
         <div class="single-hero-post bg-overlay">
             <!-- Post Image -->
-            <div class="slide-img bg-img" style="background-image: url(img/bg-img/2.jpg);"></div>
+            <div class="slide-img bg-img" style="background-image: url(Home/img/bg-img/2.jpg);"></div>
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <!-- Post Content -->
                         <div class="hero-slides-content text-center">
-                            <h2>Plants exist in the weather and light rays that surround them</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque ante nec ipsum iaculis, ac iaculis ipsum porttitor. Vivamus cursus nisl lectus, id mattis nisl lobortis eu. Duis diam augue, dapibus ut dolor at, mattis maximus dolor.</p>
+                            <h2>Welcome to our agricultural marketplace!</h2>
+                            <p>Discover the perfect farming opportunity or find high-quality produce from local farmers on our platform. Whether you're buying or selling, we provide a seamless experience for agricultural trade. Start exploring today!</p>
                             <div class="welcome-btn-group">
-                                <a href="#" class="btn alazea-btn mr-30">GET STARTED</a>
-                                <a href="#" class="btn alazea-btn active">CONTACT US</a>
+                                <a href="{{route('login')}}" class="btn alazea-btn mr-30">GET STARTED</a>
+                                <a href="/contact" class="btn alazea-btn active">CONTACT US</a>
                             </div>
                         </div>
                     </div>
@@ -222,12 +223,12 @@
                     <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                         <!-- Icon -->
                         <div class="service-icon mr-30">
-                            <img src="img/core-img/s1.png" alt="">
+                            <img src="{{asset('Home/img/core-img/s1.png')}}" alt="">
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Plants Care</h5>
-                            <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                            <h5>Selling Agricultural Products</h5>
+                            <p>Experience hassle-free selling of your agricultural products. Connect with buyers and effortlessly showcase your offerings.</p>
                         </div>
                     </div>
 
@@ -235,12 +236,12 @@
                     <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- Icon -->
                         <div class="service-icon mr-30">
-                            <img src="img/core-img/s2.png" alt="">
+                            <img src="{{asset('Home/img/core-img/s2.png')}}" alt="">
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Pressure Washing</h5>
-                            <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                            <h5>Buying Agricultural Products</h5>
+                            <p>Find top-quality agricultural products from sellers across various regions. Explore a wide range of offerings and make purchases hassle-free.</p>
                         </div>
                     </div>
 
@@ -248,12 +249,12 @@
                     <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
                         <!-- Icon -->
                         <div class="service-icon mr-30">
-                            <img src="img/core-img/s3.png" alt="">
+                            <img src="{{asset('Home/img/core-img/s3.png')}}" alt="">
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Tree Service &amp; Trimming</h5>
-                            <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                            <h5>Plant Care Services</h5>
+                            <p>Discover expert services for the well-being of your plants. From care tips to disease prevention, we've got your plants covered.</p>
                         </div>
                     </div>
 
@@ -262,8 +263,8 @@
 
             <div class="col-12 col-lg-6">
                 <div class="alazea-video-area bg-overlay mb-100">
-                    <img src="img/bg-img/23.jpg" alt="">
-                    <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-icon">
+                    <img src="{{asset('Home/img/bg-img/23.jpg')}}" alt="">
+                    <a href="https://www.youtube.com/watch?v=R4VjrtHf4Gw" class="video-icon">
                         <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -843,58 +844,6 @@
 </section>
 <!-- ##### Subscribe Area End ##### -->
 
-<!-- ##### Contact Area Start ##### -->
-<section class="contact-area section-padding-100-0">
-    <div class="container">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-12 col-lg-5">
-                <!-- Section Heading -->
-                <div class="section-heading">
-                    <h2>GET IN TOUCH</h2>
-                    <p>Send us a message, we will call back later</p>
-                </div>
-                <!-- Contact Form Area -->
-                <div class="contact-form-area mb-100">
-                    <form action="#" method="post">
-                        <div class="row">
-                            <div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-name" placeholder="Your Name">
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="contact-email" placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-subject" placeholder="Subject">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn alazea-btn mt-15">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-6">
-                <!-- Google Maps -->
-                <div class="map-area mb-100">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### Contact Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
@@ -1033,15 +982,15 @@
 
 <!-- ##### All Javascript Files ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="{{asset('Admin/js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="{{asset('Home/js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="{{asset('Admin/js/bootstrap/popper.min.js')}}"></script>
+<script src="{{asset('Home/js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="{{asset('Admin/js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('Home/js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="{{asset('Admin/js/plugins/plugins.js')}}"></script>
+<script src="{{asset('Home/js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="{{asset('Admin/js/active.js')}}"></script>
+<script src="{{asset('Home/js/active.js')}}"></script>
 </body>
 
 </html>

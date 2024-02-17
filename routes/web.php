@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home.index');
 });
-Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'login']);
+Route::post('/auth/login', [App\Http\Controllers\Api\AuthController::class, 'login'])->name('login');
 
-Route::post('register', [App\Http\Controllers\Api\AuthController::class, 'register']);
+Route::post('auth/register', [App\Http\Controllers\Api\AuthController::class, 'register']);
 
 Route::get('logout', [App\Http\Controllers\Api\AuthController::class, 'logout']);
 
