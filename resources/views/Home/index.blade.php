@@ -2,995 +2,1214 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
+    <meta charset="utf-8">
     <title>Farm Ecommerce</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset('Home/img/core-img/favicon.ico')}}">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{asset('Home/style.css')}}">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
+    <link href="{{{asset('Home/lib/lightbox/css/lightbox.min.css')}}}" rel="stylesheet">
+    <link href="{{asset('Home/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{asset('Home/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{asset('Home/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
-<!-- Preloader -->
-<div class="preloader d-flex align-items-center justify-content-center">
-    <div class="preloader-circle"></div>
-    <div class="preloader-img">
-        <img src="{{asset('Home/img/core-img/leaf.png')}}" alt="">
+
+<!-- Spinner Start -->
+<div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+</div>
+<!-- Spinner End -->
+
+
+<!-- Navbar start -->
+<div class="container-fluid fixed-top">
+    <div class="container topbar bg-primary d-none d-lg-block">
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
+                <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+            </div>
+            <div class="top-link pe-2">
+                <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
+            </div>
+        </div>
+    </div>
+    <div class="container px-0">
+        <nav class="navbar navbar-light bg-white navbar-expand-xl">
+            <a href="/" class="navbar-brand"><h1 class="text-primary display-6">Agricultural Products</h1></a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="shop.html" class="nav-item nav-link">Shop</a>
+                    <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a href="cart.html" class="dropdown-item">Cart</a>
+                            <a href="chackout.html" class="dropdown-item">Chackout</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="d-flex m-3 me-0">
+                    <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                    <a href="{{route('cart')}}" class="position-relative me-4 my-auto">
+                        <i class="fa fa-shopping-bag fa-2x"></i>
+                        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                    </a>
+                    <a href="{{route('login')}}" class="my-auto">
+                        <i class="fas fa-user fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </div>
 </div>
+<!-- Navbar End -->
 
-<!-- ##### Header Area Start ##### -->
-<header class="header-area">
 
-    <!-- ***** Top Header Area ***** -->
-    <div class="top-header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="top-header-content d-flex align-items-center justify-content-between">
-                        <!-- Top Header Content -->
-                        <div class="top-header-meta">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="samwriters23@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: samwriters23@gmail.com</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1254-718322260"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +254-718322260</span></a>
+<!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center">
+                <div class="input-group w-75 mx-auto d-flex">
+                    <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Search End -->
+
+
+<!-- Hero Start -->
+<div class="container-fluid py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-12 col-lg-7">
+                <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
+                <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
+                    <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active rounded">
+                            <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
+                            <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
                         </div>
-
-                        <!-- Top Header Content -->
-                        <div class="top-header-meta d-flex">
-                            <!-- Language Dropdown -->
-                            <div class="language-dropdown">
-                                <div class="dropdown">
-
-                                </div>
-                            </div>
-                            <!-- Login -->
-                            <div class="login">
-                                <a href="{{route('login')}}"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
-                            </div>
-                            <!-- Cart -->
-                            <div class="cart">
-                                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
-                            </div>
+                        <div class="carousel-item rounded">
+                            <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                            <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
                         </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<!-- Featurs Section Start -->
+<div class="container-fluid featurs py-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-car-side fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Free Shipping</h5>
+                        <p class="mb-0">Free on order over $300</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-user-shield fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Security Payment</h5>
+                        <p class="mb-0">100% security payment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>30 Day Return</h5>
+                        <p class="mb-0">30 day money guarantee</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fa fa-phone-alt fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>24/7 Support</h5>
+                        <p class="mb-0">Support every time fast</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- Featurs Section End -->
 
-    <!-- ***** Navbar Area ***** -->
-    <div class="alazea-main-menu">
-        <div class="classy-nav-container breakpoint-off">
-            <div class="container">
-                <!-- Menu -->
-                <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
-                    <!-- Nav Brand -->
-                    <a href="/" class="nav-brand"><img src="{{asset('Home/img/core-img/logo.png')}}" alt=""></a>
-
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
-
-                    <!-- Menu -->
-                    <div class="classy-menu">
-
-                        <!-- Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
-
-                        <!-- Navbar Start -->
-                        <div class="classynav">
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/about">About</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="shop.html">Shop</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-details.html">Shop Details</a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="portfolio.html">Portfolio</a>
-                                            <ul class="dropdown">
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="single-portfolio.html">Portfolio Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-post.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="portfolio.html">Portfolio</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-
-                            <!-- Search Icon -->
-                            <div id="searchIcon">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div>
-
-                        </div>
-                        <!-- Navbar End -->
-                    </div>
-                </nav>
-
-                <!-- Search Form -->
-                <div class="search-form">
-                    <form action="#" method="get">
-                        <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
-                        <button type="submit" class="d-none"></button>
-                    </form>
-                    <!-- Close Icon -->
-                    <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+<!-- Fruits Shop Start-->
+<div class="container-fluid fruite py-5">
+    <div class="container py-5">
+        <div class="tab-class text-center">
+            <div class="row g-4">
+                <div class="col-lg-4 text-start">
+                    <h1>Our Organic Products</h1>
+                </div>
+                <div class="col-lg-8 text-end">
+                    <ul class="nav nav-pills d-inline-flex text-center mb-5">
+                        <li class="nav-item">
+                            <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+                                <span class="text-dark" style="width: 130px;">All Products</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
+                                <span class="text-dark" style="width: 130px;">Vegetables</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                                <span class="text-dark" style="width: 130px;">Fruits</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
+                                <span class="text-dark" style="width: 130px;">Bread</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
+                                <span class="text-dark" style="width: 130px;">Meat</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-<!-- ##### Header Area End ##### -->
-
-<!-- ##### Hero Area Start ##### -->
-<section class="hero-area">
-    <div class="hero-post-slides owl-carousel">
-
-        <!-- Single Hero Post -->
-        <div class="single-hero-post bg-overlay">
-            <!-- Post Image -->
-            <div class="slide-img bg-img" style="background-image: url(Home/img/bg-img/1.jpg);"></div>
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Content -->
-                        <div class="hero-slides-content text-center">
-                            <h2>We are the best platform where farmers can freely interact. </h2>
-
-                            <p>Our platform serves as a thriving marketplace connecting agricultural farmers with buyers, facilitating seamless transactions for farm products. Here, farmers can effortlessly showcase their offerings, while interested individuals can browse and purchase directly. Join us today and experience the ease of agricultural trade!</p>
-                            <div class="welcome-btn-group">
-                                <a href="{{route('login')}}" class="btn alazea-btn mr-30">GET STARTED</a>
-                                <a href="/contact" class="btn alazea-btn active">CONTACT US</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Single Hero Post -->
-        <div class="single-hero-post bg-overlay">
-            <!-- Post Image -->
-            <div class="slide-img bg-img" style="background-image: url(Home/img/bg-img/2.jpg);"></div>
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Content -->
-                        <div class="hero-slides-content text-center">
-                            <h2>Welcome to our agricultural marketplace!</h2>
-                            <p>Discover the perfect farming opportunity or find high-quality produce from local farmers on our platform. Whether you're buying or selling, we provide a seamless experience for agricultural trade. Start exploring today!</p>
-                            <div class="welcome-btn-group">
-                                <a href="{{route('login')}}" class="btn alazea-btn mr-30">GET STARTED</a>
-                                <a href="/contact" class="btn alazea-btn active">CONTACT US</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!-- ##### Hero Area End ##### -->
-
-<!-- ##### Service Area Start ##### -->
-<section class="our-services-area bg-gray section-padding-100-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>OUR SERVICES</h2>
-                    <p>We provide the perfect service for you.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-between">
-            <div class="col-12 col-lg-5">
-                <div class="alazea-service-area mb-100">
-
-                    <!-- Single Service Area -->
-                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Icon -->
-                        <div class="service-icon mr-30">
-                            <img src="{{asset('Home/img/core-img/s1.png')}}" alt="">
-                        </div>
-                        <!-- Content -->
-                        <div class="service-content">
-                            <h5>Selling Agricultural Products</h5>
-                            <p>Experience hassle-free selling of your agricultural products. Connect with buyers and effortlessly showcase your offerings.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Service Area -->
-                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Icon -->
-                        <div class="service-icon mr-30">
-                            <img src="{{asset('Home/img/core-img/s2.png')}}" alt="">
-                        </div>
-                        <!-- Content -->
-                        <div class="service-content">
-                            <h5>Buying Agricultural Products</h5>
-                            <p>Find top-quality agricultural products from sellers across various regions. Explore a wide range of offerings and make purchases hassle-free.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Service Area -->
-                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Icon -->
-                        <div class="service-icon mr-30">
-                            <img src="{{asset('Home/img/core-img/s3.png')}}" alt="">
-                        </div>
-                        <!-- Content -->
-                        <div class="service-content">
-                            <h5>Plant Care Services</h5>
-                            <p>Discover expert services for the well-being of your plants. From care tips to disease prevention, we've got your plants covered.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-6">
-                <div class="alazea-video-area bg-overlay mb-100">
-                    <img src="{{asset('Home/img/bg-img/23.jpg')}}" alt="">
-                    <a href="https://www.youtube.com/watch?v=R4VjrtHf4Gw" class="video-icon">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### Service Area End ##### -->
-
-<!-- ##### About Area Start ##### -->
-<section class="about-us-area section-padding-100-0">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-12 col-lg-5">
-                <!-- Section Heading -->
-                <div class="section-heading">
-                    <h2>ABOUT US</h2>
-                    <p>We are leading in the plants service fields.</p>
-                </div>
-                <p>Quisque orci quam, vulputate non commodo finibus, molestie ac ante. Duis in sceleri quesem. Nulla sit amet varius nunc. Maecenas dui, tempeu ullam corper in.</p>
-
-                <!-- Progress Bar Content Area -->
-                <div class="alazea-progress-bar mb-50">
-                    <!-- Single Progress Bar -->
-                    <div class="single_progress_bar">
-                        <p>Office plants</p>
-                        <div id="bar1" class="barfiller">
-                            <div class="tipWrap">
-                                <span class="tip"></span>
-                            </div>
-                            <span class="fill" data-percentage="80"></span>
-                        </div>
-                    </div>
-
-                    <!-- Single Progress Bar -->
-                    <div class="single_progress_bar">
-                        <p>Field manager</p>
-                        <div id="bar2" class="barfiller">
-                            <div class="tipWrap">
-                                <span class="tip"></span>
-                            </div>
-                            <span class="fill" data-percentage="70"></span>
-                        </div>
-                    </div>
-
-                    <!-- Single Progress Bar -->
-                    <div class="single_progress_bar">
-                        <p>Landscape design</p>
-                        <div id="bar3" class="barfiller">
-                            <div class="tipWrap">
-                                <span class="tip"></span>
-                            </div>
-                            <span class="fill" data-percentage="85"></span>
-                        </div>
-                    </div>
-
-                    <!-- Single Progress Bar -->
-                    <div class="single_progress_bar">
-                        <p>Garden Care</p>
-                        <div id="bar4" class="barfiller">
-                            <div class="tipWrap">
-                                <span class="tip"></span>
-                            </div>
-                            <span class="fill" data-percentage="65"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-6">
-                <div class="alazea-benefits-area">
-                    <div class="row">
-                        <!-- Single Benefits Area -->
-                        <div class="col-12 col-sm-6">
-                            <div class="single-benefits-area">
-                                <img src="img/core-img/b1.png" alt="">
-                                <h5>Quality Products</h5>
-                                <p>Intiam eu sagittis est, at commodo lacini libero. Praesent dignissim sed odio vel aliquam manta lagorn.</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Benefits Area -->
-                        <div class="col-12 col-sm-6">
-                            <div class="single-benefits-area">
-                                <img src="img/core-img/b2.png" alt="">
-                                <h5>Perfect Service</h5>
-                                <p>Intiam eu sagittis est, at commodo lacini libero. Praesent dignissim sed odio vel aliquam manta lagorn.</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Benefits Area -->
-                        <div class="col-12 col-sm-6">
-                            <div class="single-benefits-area">
-                                <img src="img/core-img/b3.png" alt="">
-                                <h5>100% Natural</h5>
-                                <p>Intiam eu sagittis est, at commodo lacini libero. Praesent dignissim sed odio vel aliquam manta lagorn.</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Benefits Area -->
-                        <div class="col-12 col-sm-6">
-                            <div class="single-benefits-area">
-                                <img src="img/core-img/b4.png" alt="">
-                                <h5>Environmentally friendly</h5>
-                                <p>Intiam eu sagittis est, at commodo lacini libero. Praesent dignissim sed odio vel aliquam manta lagorn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="border-line"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### About Area End ##### -->
-
-<!-- ##### Portfolio Area Start ##### -->
-<section class="alazea-portfolio-area section-padding-100-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>OUR PORTFOLIO</h2>
-                    <p>We devote all of our experience and efforts for creation</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="alazea-portfolio-filter">
-                    <div class="portfolio-filter">
-                        <button class="btn active" data-filter="*">All</button>
-                        <button class="btn" data-filter=".design">Coffee Design</button>
-                        <button class="btn" data-filter=".garden">Garden</button>
-                        <button class="btn" data-filter=".home-design">Home Design</button>
-                        <button class="btn" data-filter=".office-design">Office Design</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row alazea-portfolio">
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/16.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/17.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden design wow fadeInUp" data-wow-delay="300ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/18.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/18.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 3">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design wow fadeInUp" data-wow-delay="400ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/19.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/19.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design wow fadeInUp" data-wow-delay="100ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/20.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/20.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/21.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/21.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Portfolio Area -->
-            <div class="col-12 col-lg-6 single_portfolio_item home-design wow fadeInUp" data-wow-delay="300ms">
-                <!-- Portfolio Thumbnail -->
-                <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/22.jpg);"></div>
-                <!-- Portfolio Hover Text -->
-                <div class="portfolio-hover-overlay">
-                    <a href="img/bg-img/22.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7">
-                        <div class="port-hover-text">
-                            <h3>Minimal Flower Store</h3>
-                            <h5>Office Plants</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ##### Portfolio Area End ##### -->
-
-<!-- ##### Testimonial Area Start ##### -->
-<section class="testimonial-area section-padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="testimonials-slides owl-carousel">
-
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="img/bg-img/13.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>TESTIMONIAL</h2>
-                                        <p>Some kind words from clients about Alazea</p>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Grapes</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Mr. Nick Jonas</h6>
-                                        <p>CEO of NAVATECH</p>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Grapes</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Raspberries</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Apricots</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Banana</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Oranges</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Raspberries</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Grapes</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="img/bg-img/14.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>TESTIMONIAL</h2>
-                                        <p>Some kind words from clients about Alazea</p>
+                </div>
+                <div id="tab-2" class="tab-pane fade show p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Grapes</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Mr. Nazrul Islam</h6>
-                                        <p>CEO of NAVATECH</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="img/bg-img/15.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>TESTIMONIAL</h2>
-                                        <p>Some kind words from clients about Alazea</p>
-                                    </div>
-                                    <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Mr. Jonas Nick</h6>
-                                        <p>CEO of NAVATECH</p>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Raspberries</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div id="tab-3" class="tab-pane fade show p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Oranges</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Apple</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-4" class="tab-pane fade show p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Grapes</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Apricots</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-5" class="tab-pane fade show p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Banana</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Raspberries</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img">
+                                            <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>Oranges</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- ##### Testimonial Area End ##### -->
+</div>
+<!-- Fruits Shop End-->
 
-<!-- ##### Product Area Start ##### -->
-<section class="new-arrivals-products-area bg-gray section-padding-100">
+
+<!-- Featurs Start -->
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-secondary rounded border border-secondary">
+                        <img src="img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-primary text-center p-4 rounded">
+                                <h5 class="text-white">Fresh Apples</h5>
+                                <h3 class="mb-0">20% OFF</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-dark rounded border border-dark">
+                        <img src="img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-light text-center p-4 rounded">
+                                <h5 class="text-primary">Tasty Fruits</h5>
+                                <h3 class="mb-0">Free delivery</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-primary rounded border border-primary">
+                        <img src="img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-secondary text-center p-4 rounded">
+                                <h5 class="text-white">Exotic Vegitable</h5>
+                                <h3 class="mb-0">Discount 30$</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featurs End -->
+
+
+<!-- Vesitable Shop Start-->
+<div class="container-fluid vesitable py-5">
+    <div class="container py-5">
+        <h1 class="mb-0">Fresh Organic Vegetables</h1>
+        <div class="owl-carousel vegetable-carousel justify-content-center">
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Parsely</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Parsely</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Banana</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Bell Papper</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Potatoes</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Parsely</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Potatoes</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-primary rounded position-relative vesitable-item">
+                <div class="vesitable-img">
+                    <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                <div class="p-4 rounded-bottom">
+                    <h4>Parsely</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div class="d-flex justify-content-between flex-lg-wrap">
+                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Vesitable Shop End -->
+
+
+<!-- Banner Section Start-->
+<div class="container-fluid banner bg-secondary my-5">
+    <div class="container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="py-4">
+                    <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
+                    <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
+                    <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
+                    <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="img/baner-1.png" class="img-fluid w-100 rounded" alt="">
+                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
+                        <h1 style="font-size: 100px;">1</h1>
+                        <div class="d-flex flex-column">
+                            <span class="h2 mb-0">50$</span>
+                            <span class="h4 text-muted mb-0">kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+
+
+<!-- Bestsaler Product Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-4">Bestseller Products</h1>
+            <p>Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-2.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-3.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-4.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-5.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="img/best-product-6.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="h5">Organic Tomato</a>
+                            <div class="d-flex my-3">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="mb-3">3.12 $</h4>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="text-center">
+                    <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
+                    <div class="py-4">
+                        <a href="#" class="h5">Organic Tomato</a>
+                        <div class="d-flex my-3 justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="mb-3">3.12 $</h4>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="text-center">
+                    <img src="img/fruite-item-2.jpg" class="img-fluid rounded" alt="">
+                    <div class="py-4">
+                        <a href="#" class="h5">Organic Tomato</a>
+                        <div class="d-flex my-3 justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="mb-3">3.12 $</h4>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="text-center">
+                    <img src="img/fruite-item-3.jpg" class="img-fluid rounded" alt="">
+                    <div class="py-4">
+                        <a href="#" class="h5">Organic Tomato</a>
+                        <div class="d-flex my-3 justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="mb-3">3.12 $</h4>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="text-center">
+                    <img src="img/fruite-item-4.jpg" class="img-fluid rounded" alt="">
+                    <div class="py-2">
+                        <a href="#" class="h5">Organic Tomato</a>
+                        <div class="d-flex my-3 justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="mb-3">3.12 $</h4>
+                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bestsaler Product End -->
+
+
+<!-- Fact Start -->
+<div class="container-fluid py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>NEW ARRIVALS</h2>
-                    <p>We have the latest products, it must be exciting for you</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <!-- Single Product Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                        <a href="shop-details.html"><img src="img/bg-img/9.jpg" alt=""></a>
-                        <!-- Product Tag -->
-                        <div class="product-tag">
-                            <a href="#">Hot</a>
-                        </div>
-                        <div class="product-meta d-flex">
-                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                        </div>
-                    </div>
-                    <!-- Product Info -->
-                    <div class="product-info mt-15 text-center">
-                        <a href="shop-details.html">
-                            <p>Cactus Flower</p>
-                        </a>
-                        <h6>$10.99</h6>
+        <div class="bg-light p-5 rounded">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-5">
+                        <i class="fa fa-users text-secondary"></i>
+                        <h4>satisfied customers</h4>
+                        <h1>1963</h1>
                     </div>
                 </div>
-            </div>
-
-            <!-- Single Product Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="200ms">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                        <a href="shop-details.html"><img src="img/bg-img/10.jpg" alt=""></a>
-                        <div class="product-meta d-flex">
-                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                        </div>
-                    </div>
-                    <!-- Product Info -->
-                    <div class="product-info mt-15 text-center">
-                        <a href="shop-details.html">
-                            <p>Cactus Flower</p>
-                        </a>
-                        <h6>$10.99</h6>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-5">
+                        <i class="fa fa-users text-secondary"></i>
+                        <h4>quality of service</h4>
+                        <h1>99%</h1>
                     </div>
                 </div>
-            </div>
-
-            <!-- Single Product Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                        <a href="shop-details.html"><img src="img/bg-img/11.jpg" alt=""></a>
-                        <div class="product-meta d-flex">
-                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                        </div>
-                    </div>
-                    <!-- Product Info -->
-                    <div class="product-info mt-15 text-center">
-                        <a href="shop-details.html">
-                            <p>Cactus Flower</p>
-                        </a>
-                        <h6>$10.99</h6>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-5">
+                        <i class="fa fa-users text-secondary"></i>
+                        <h4>quality certificates</h4>
+                        <h1>33</h1>
                     </div>
                 </div>
-            </div>
-
-            <!-- Single Product Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="400ms">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                        <a href="shop-details.html"><img src="img/bg-img/12.jpg" alt=""></a>
-                        <!-- Product Tag -->
-                        <div class="product-tag sale-tag">
-                            <a href="#">Hot</a>
-                        </div>
-                        <div class="product-meta d-flex">
-                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
-                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                        </div>
-                    </div>
-                    <!-- Product Info -->
-                    <div class="product-info mt-15 text-center">
-                        <a href="shop-details.html">
-                            <p>Cactus Flower</p>
-                        </a>
-                        <h6>$10.99</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 text-center">
-                <a href="#" class="btn alazea-btn">View All</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ##### Product Area End ##### -->
-
-<!-- ##### Blog Area Start ##### -->
-<section class="alazea-blog-area section-padding-100-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2>LATEST NEWS</h2>
-                    <p>The breaking news about Gardening &amp; House plants</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-
-            <!-- Single Blog Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="single-blog-post mb-100">
-                    <div class="post-thumbnail mb-30">
-                        <a href="single-post.html"><img src="img/bg-img/6.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">
-                            <h5>Garden designers across the country forecast ideas shaping the gardening world in 2018</h5>
-                        </a>
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 20 Jun 2018</a>
-                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Alan Jackson</a>
-                        </div>
-                        <p class="post-excerpt">Integer luctus diam ac scerisque consectetur. Vimus ottawas nec lacus sit amet. Aenean interdus mid vitae.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="single-blog-post mb-100">
-                    <div class="post-thumbnail mb-30">
-                        <a href="single-post.html"><img src="img/bg-img/7.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">
-                            <h5>2018 Midwest Tree and Shrub Conference: Resilient Plants for a Lasting Landscape</h5>
-                        </a>
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 20 Jun 2018</a>
-                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Christina Aguilera</a>
-                        </div>
-                        <p class="post-excerpt">Integer luctus diam ac scerisque consectetur. Vimus ottawas nec lacus sit amet. Aenean interdus mid vitae.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post Area -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="single-blog-post mb-100">
-                    <div class="post-thumbnail mb-30">
-                        <a href="single-post.html"><img src="img/bg-img/8.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">
-                            <h5>The summer coming up, it’s time for both us and the flowers to soak up the sunshine</h5>
-                        </a>
-                        <div class="post-meta">
-                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 19 Jun 2018</a>
-                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mason Jenkins</a>
-                        </div>
-                        <p class="post-excerpt">Integer luctus diam ac scerisque consectetur. Vimus ottawas nec lacus sit amet. Aenean interdus mid vitae.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ##### Blog Area End ##### -->
-
-<!-- ##### Subscribe Area Start ##### -->
-<section class="subscribe-newsletter-area" style="background-image: url(img/bg-img/subscribe.png);">
-    <div class="container">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-12 col-lg-5">
-                <!-- Section Heading -->
-                <div class="section-heading mb-0">
-                    <h2>Join the Newsletter</h2>
-                    <p>Subscribe to our newsletter and get 10% off your first purchase</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="subscribe-form">
-                    <form action="#" method="get">
-                        <input type="email" name="subscribe-email" id="subscribeEmail" placeholder="Enter your email">
-                        <button type="submit" class="btn alazea-btn">SUBSCRIBE</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subscribe Side Thumbnail -->
-    <div class="subscribe-side-thumb wow fadeInUp" data-wow-delay="500ms">
-        <img class="first-img" src="img/core-img/leaf.png" alt="">
-    </div>
-</section>
-<!-- ##### Subscribe Area End ##### -->
-
-
-<!-- ##### Footer Area Start ##### -->
-<footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
-    <!-- Main Footer Area -->
-    <div class="main-footer-area">
-        <div class="container">
-            <div class="row">
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="footer-logo mb-30">
-                            <a href="#"><img src="img/core-img/logo.png" alt=""></a>
-                        </div>
-                        <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
-                        <div class="social-info">
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="widget-title">
-                            <h5>QUICK LINK</h5>
-                        </div>
-                        <nav class="widget-nav">
-                            <ul>
-                                <li><a href="#">Purchase</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Payment</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Return</a></li>
-                                <li><a href="#">Advertise</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li><a href="#">Orders</a></li>
-                                <li><a href="#">Policities</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="widget-title">
-                            <h5>BEST SELLER</h5>
-                        </div>
-
-                        <!-- Single Best Seller Products -->
-                        <div class="single-best-seller-product d-flex align-items-center">
-                            <div class="product-thumbnail">
-                                <a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-details.html">Cactus Flower</a>
-                                <p>$10.99</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Best Seller Products -->
-                        <div class="single-best-seller-product d-flex align-items-center">
-                            <div class="product-thumbnail">
-                                <a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-details.html">Tulip Flower</a>
-                                <p>$11.99</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="widget-title">
-                            <h5>CONTACT</h5>
-                        </div>
-
-                        <div class="contact-information">
-                            <p><span>Address:</span> 505 Silk Rd, New York</p>
-                            <p><span>Phone:</span> +1 234 122 122</p>
-                            <p><span>Email:</span> info.deercreative@gmail.com</p>
-                            <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
-                            <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
-                        </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-5">
+                        <i class="fa fa-users text-secondary"></i>
+                        <h4>Available Products</h4>
+                        <h1>789</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- Fact Start -->
 
-    <!-- Footer Bottom Area -->
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="border-line"></div>
-                </div>
-                <!-- Copywrite Text -->
-                <div class="col-12 col-md-6">
-                    <div class="copywrite-text">
-                        <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">PIXEL STUDIOS</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+<!-- Tastimonial Start -->
+<div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our Testimonial</h4>
+            <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,
                         </p>
                     </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Client Name</h4>
+                            <p class="m-0 pb-3">Profession</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Footer Nav -->
-                <div class="col-12 col-md-6">
-                    <div class="footer-nav">
-                        <nav>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Portfolio</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
+            </div>
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Client Name</h4>
+                            <p class="m-0 pb-3">Profession</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Client Name</h4>
+                            <p class="m-0 pb-3">Profession</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-<!-- ##### Footer Area End ##### -->
+</div>
+<!-- Tastimonial End -->
 
-<!-- ##### All Javascript Files ##### -->
-<!-- jQuery-2.2.4 js -->
-<script src="{{asset('Home/js/jquery/jquery-2.2.4.min.js')}}"></script>
-<!-- Popper js -->
-<script src="{{asset('Home/js/bootstrap/popper.min.js')}}"></script>
-<!-- Bootstrap js -->
-<script src="{{asset('Home/js/bootstrap/bootstrap.min.js')}}"></script>
-<!-- All Plugins js -->
-<script src="{{asset('Home/js/plugins/plugins.js')}}"></script>
-<!-- Active js -->
-<script src="{{asset('Home/js/active.js')}}"></script>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+    <div class="container py-5">
+        <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <a href="#">
+                        <h1 class="text-primary mb-0">Fruitables</h1>
+                        <p class="text-secondary mb-0">Fresh products</p>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                        <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex justify-content-end pt-3">
+                        <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Why People Like us!</h4>
+                    <p class="mb-4">typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
+                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-start footer-item">
+                    <h4 class="text-light mb-3">Shop Info</h4>
+                    <a class="btn-link" href="">About Us</a>
+                    <a class="btn-link" href="">Contact Us</a>
+                    <a class="btn-link" href="">Privacy Policy</a>
+                    <a class="btn-link" href="">Terms & Condition</a>
+                    <a class="btn-link" href="">Return Policy</a>
+                    <a class="btn-link" href="">FAQs & Help</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-start footer-item">
+                    <h4 class="text-light mb-3">Account</h4>
+                    <a class="btn-link" href="">My Account</a>
+                    <a class="btn-link" href="">Shop details</a>
+                    <a class="btn-link" href="">Shopping Cart</a>
+                    <a class="btn-link" href="">Wishlist</a>
+                    <a class="btn-link" href="">Order History</a>
+                    <a class="btn-link" href="">International Orders</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Contact</h4>
+                    <p>Address: 1429 Netus Rd, NY 48247</p>
+                    <p>Email: Example@gmail.com</p>
+                    <p>Phone: +0123 4567 8910</p>
+                    <p>Payment Accepted</p>
+                    <img src="img/payment.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright bg-dark py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+            </div>
+            <div class="col-md-6 my-auto text-center text-md-end text-white">
+                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('Home/lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('Home/lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('Home/lib/lightbox/js/lightbox.min.js')}}"></script>
+<script src="{{asset('Home/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('Home/js/main.js')}}"></script>
 </body>
 
 </html>
