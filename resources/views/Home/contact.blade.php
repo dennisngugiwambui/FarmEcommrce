@@ -51,10 +51,12 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <form action="" class="">
-                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name">
-                            <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email">
-                            <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
+                        <form action="{{route('NewContact')}}" class="" method="post">
+                            @csrf
+                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" name="name" placeholder="Your Name">
+                            <input type="number" class="w-100 form-control border-0 py-3 mb-4" name="phone" placeholder="Enter Your Phone">
+                            <input type="email" class="w-100 form-control border-0 py-3 mb-4" name="subject" placeholder="Enter Your Email">
+                            <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" name="message" placeholder="Your Message"></textarea>
                             <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
                         </form>
                     </div>
