@@ -17,4 +17,9 @@ class BuyerController extends Controller
     {
         return view('Home.ProductDetails');
     }
+
+    public function contact()
+    {
+        return view('Home.contact');
+    }
 }

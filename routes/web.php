@@ -26,6 +26,7 @@ Route::get('/', function () {
 //Route::get('/cart', [App\Http\Controllers\Api\SellerController::class, 'cart'])->name('cart');
 Route::get('/productDetail', [App\Http\Controllers\Api\BuyerController::class, 'productDetail'])->name('productDetail');
 Route::get('/cart', [App\Http\Controllers\Api\BuyerController::class, 'cart'])->name('cart');
+Route::get('/contact', [App\Http\Controllers\Api\BuyerController::class, 'contact'])->name('contact');
 
 // Post
 
