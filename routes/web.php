@@ -23,7 +23,9 @@ Route::get('/', function () {
 //Route::get('auth/logout', [App\Http\Controllers\Api\AuthController::class, 'logout']);
 
 
-Route::get('/cart', [App\Http\Controllers\Api\SellerController::class, 'cart'])->name('cart');
+//Route::get('/cart', [App\Http\Controllers\Api\SellerController::class, 'cart'])->name('cart');
+Route::get('/productDetail', [App\Http\Controllers\Api\BuyerController::class, 'productDetail'])->name('productDetail');
+Route::get('/cart', [App\Http\Controllers\Api\BuyerController::class, 'cart'])->name('cart');
 
 // Post
 

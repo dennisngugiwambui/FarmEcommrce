@@ -7,5 +7,14 @@ use Illuminate\Http\Request;
 
 class BuyerController extends Controller
 {
-    //
+    public function cart()
+    {
+        return view('Home.cart');
+
+    }
+
+    public function productDetail()
+    {
+        return view('Home.ProductDetails');
+    }
 }

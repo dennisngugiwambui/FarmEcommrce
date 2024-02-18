@@ -110,18 +110,20 @@
                                 <div class="row g-4">
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="{{asset('Home/img/fruite-item-5.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Grapes</h4>
-                                                <p>This product is best for health purposes. It helps in adding blood levels. </p>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            <a href="{{route('productDetail')}}">
+                                                <div class="fruite-img">
+                                                    <img src="{{asset('Home/img/fruite-item-5.jpg')}}" class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
-                                            </div>
+                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                    <h4>Grapes</h4>
+                                                    <p>This product is best for health purposes. It helps in adding blood levels. </p>
+                                                    <div class="d-flex justify-content-between flex-lg-wrap">
+                                                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4 col-xl-3">
@@ -940,7 +942,7 @@
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
                             <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+                                <img src="{{asset('Home/img/testimonial-1.jpg')}}" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
                                 <h4 class="text-dark">Client Name</h4>

@@ -20,7 +20,7 @@
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" value="{{ old('name') }}" required autocomplete="name" autofocus />
+                                       name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="enter name" />
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror"
-                                       name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus />
+                                       name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus placeholder="enter phone number"/>
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email">
+                                       name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="enter email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password" required
-                                       autocomplete="new-password">
+                                       autocomplete="new-password" placeholder="password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input id="password-confirm" type="password" class="form-control"
-                                       name="password_confirmation" required autocomplete="new-password" />
+                                       name="password_confirmation" required autocomplete="new-password" placeholder="confirm password" />
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
