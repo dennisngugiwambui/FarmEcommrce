@@ -1,4 +1,4 @@
-@extends('Home.app')
+@extends('HomePage.app')
 
 @section('content')
 
@@ -12,7 +12,8 @@
                 </div>
                 <div class="modal-body d-flex align-items-center">
                     <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                               aria-describedby="search-icon-1">
                         <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                     </div>
                 </div>
@@ -46,18 +47,25 @@
                     <div class="col-lg-12">
                         <div class="h-100 rounded">
                             <iframe class="rounded w-100"
-                                    style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7564422812957!2d37.65463367577532!3d-0.31910233533547694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1827b9ef575b1ab7%3A0xfa2913c1ffafb42a!2sChuka%20University!5e0!3m2!1sen!2ske!4v1708251684323!5m2!1sen!2ske"
+                                    style="height: 400px;"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7564422812957!2d37.65463367577532!3d-0.31910233533547694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1827b9ef575b1ab7%3A0xfa2913c1ffafb42a!2sChuka%20University!5e0!3m2!1sen!2ske!4v1708251684323!5m2!1sen!2ske"
                                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <form action="{{route('NewContact')}}" class="" method="post">
                             @csrf
-                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" name="name" placeholder="Your Name">
-                            <input type="number" class="w-100 form-control border-0 py-3 mb-4" name="phone" placeholder="Enter Your Phone">
-                            <input type="email" class="w-100 form-control border-0 py-3 mb-4" name="subject" placeholder="Enter Your Email">
-                            <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" name="message" placeholder="Your Message"></textarea>
-                            <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
+                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" name="name"
+                                   placeholder="Your Name">
+                            <input type="number" class="w-100 form-control border-0 py-3 mb-4" name="phone"
+                                   placeholder="Enter Your Phone">
+                            <input type="email" class="w-100 form-control border-0 py-3 mb-4" name="subject"
+                                   placeholder="Enter Your Email">
+                            <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" name="message"
+                                      placeholder="Your Message"></textarea>
+                            <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary "
+                                    type="submit">Submit
+                            </button>
                         </form>
                     </div>
                     <div class="col-lg-5">
@@ -88,6 +96,5 @@
         </div>
     </div>
     <!-- Contact End -->
-
 
 @endsection

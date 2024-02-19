@@ -1,4 +1,4 @@
-@extends('Home.app')
+@extends('HomePage.app')
 
 @section('content')
 
@@ -12,7 +12,8 @@
                 </div>
                 <div class="modal-body d-flex align-items-center">
                     <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                               aria-describedby="search-icon-1">
                         <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                     </div>
                 </div>
@@ -52,7 +53,8 @@
                     <tr>
                         <th scope="row">
                             <div class="d-flex align-items-center">
-                                <img src="{{asset('Home/img/vegetable-item-3.png')}}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                <img src="{{asset('Home/img/vegetable-item-3.png')}}"
+                                     class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
                             </div>
                         </th>
                         <td>
@@ -64,7 +66,7 @@
                         <td>
                             <div class="input-group quantity mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
@@ -80,7 +82,7 @@
                             <p class="mb-0 mt-4">2.99 $</p>
                         </td>
                         <td>
-                            <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                            <button class="btn btn-md rounded-circle bg-light border mt-4">
                                 <i class="fa fa-times text-danger"></i>
                             </button>
                         </td>
@@ -89,7 +91,9 @@
                     <tr>
                         <th scope="row">
                             <div class="d-flex align-items-center">
-                                <img src="{{asset('Home/img/vegetable-item-5.jpg')}}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
+                                <img src="{{asset('Home/img/vegetable-item-5.jpg')}}"
+                                     class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt=""
+                                     alt="">
                             </div>
                         </th>
                         <td>
@@ -101,7 +105,7 @@
                         <td>
                             <div class="input-group quantity mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
@@ -117,7 +121,7 @@
                             <p class="mb-0 mt-4">2.99 $</p>
                         </td>
                         <td>
-                            <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                            <button class="btn btn-md rounded-circle bg-light border mt-4">
                                 <i class="fa fa-times text-danger"></i>
                             </button>
                         </td>
@@ -125,7 +129,9 @@
                     <tr>
                         <th scope="row">
                             <div class="d-flex align-items-center">
-                                <img src="{{asset('Home/img/vegetable-item-2.jpg')}}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
+                                <img src="{{asset('Home/img/vegetable-item-2.jpg')}}"
+                                     class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt=""
+                                     alt="">
                             </div>
                         </th>
                         <td>
@@ -137,7 +143,7 @@
                         <td>
                             <div class="input-group quantity mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
@@ -153,7 +159,7 @@
                             <p class="mb-0 mt-4">2.99 $</p>
                         </td>
                         <td>
-                            <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                            <button class="btn btn-md rounded-circle bg-light border mt-4">
                                 <i class="fa fa-times text-danger"></i>
                             </button>
                         </td>
@@ -163,7 +169,8 @@
             </div>
             <div class="mt-5">
                 <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-                <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
+                <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon
+                </button>
             </div>
             <div class="row g-4 justify-content-end">
                 <div class="col-8"></div>
@@ -187,13 +194,14 @@
                             <h5 class="mb-0 ps-4 me-4">Total</h5>
                             <p class="mb-0 pe-4">$99.00</p>
                         </div>
-                        <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                        <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                                type="button">Proceed Checkout
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Cart Page End -->
-
 
 @endsection

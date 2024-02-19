@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Home.index');
+    return view('HomePage.index');
 });
 //Route::post('/auth/login', [App\Http\Controllers\Api\AuthController::class, 'login'])->name('login');
 //
@@ -32,7 +32,9 @@ Route::get('/contact', [App\Http\Controllers\Api\BuyerController::class, 'contac
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //contact
 Route::post('/NewContact', [App\Http\Controllers\OperationalController::class, 'NewContact'])->name('NewContact');
