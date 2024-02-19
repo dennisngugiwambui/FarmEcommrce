@@ -49,12 +49,16 @@ class OperationalController extends Controller
             $contact->save();
 
             $user = $contact->phone;
-            $sms = "Hello, I wanted to test if it's working. Thank you.";
+            $sms = "Hello $contact->name,
+            Thank you for sending an inquiry to us. We will get back to you as soon as possible and respond to your concern.
+
+            Thank you for choosing us.";
+
             $this->sendSms($user, $sms);
 
             return redirect()->back()->with('success', 'New contact sent successfully');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
+            return redikrect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
     }
 
