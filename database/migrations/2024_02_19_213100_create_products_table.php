@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('price');
             $table->string('quantity');
+            $table->string('negotiable');
+            $table->string('location');
             $table->string('weight');
             $table->string('countryOfOrigin');
             $table->string('status')->default('product');
