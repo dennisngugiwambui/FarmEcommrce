@@ -26,4 +26,9 @@ class HomeController extends Controller
         return view('buyers.home');
     }
 
+    public function profile()
+    {
+        return view('buyers.profile');
+    }
+
 }

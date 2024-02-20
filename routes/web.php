@@ -28,6 +28,9 @@ Route::get('/productDetail', [App\Http\Controllers\Api\BuyerController::class, '
 Route::get('/cart', [App\Http\Controllers\Api\BuyerController::class, 'cart'])->name('cart');
 Route::get('/contact', [App\Http\Controllers\Api\BuyerController::class, 'contact'])->name('contact');
 
+
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+
 // Post
 
 Auth::routes();
